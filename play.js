@@ -1,7 +1,5 @@
-const { connect } = require('./client');
 const { setupInput } = require('./input');
-
+const { connect } = require('./client');
+const { IP, PORT } = require('./constraints');
 console.log('Connecting ...');
-connect();
-
-setupInput();
+setupInput(connect());

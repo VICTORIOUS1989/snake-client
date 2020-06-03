@@ -1,5 +1,5 @@
 const net = require('net');
-const { IP, PORT } = require('./constants');
+const { IP, PORT } = require('./constraints');
 
 const connect = function() {
   const conn = net.createConnection({ 
@@ -8,7 +8,7 @@ const connect = function() {
   });
   conn.on('data', (data) => {
     console.log('Server says: ', data);
-  });
+  });// interpret incoming data as text
   conn.setEncoding('utf8'); 
   
   conn.on('connect', () => {
